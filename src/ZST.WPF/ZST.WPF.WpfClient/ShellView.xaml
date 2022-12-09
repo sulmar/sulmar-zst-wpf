@@ -5,9 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZST.WPF.WpfClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello World!</TextBlock>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="402,274,0,0" VerticalAlignment="Top" Height="72" Width="153"/>
-    </Grid>
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized" >
+    
+    <DockPanel>
+      
+        
+        <TextBlock DockPanel.Dock="Top"
+            Foreground="Green"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Height="200"
+                   >Hello World!</TextBlock>
+
+        <Frame Source="ClickerView.xaml" />
+
+    </DockPanel>
 </Window>
