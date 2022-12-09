@@ -1,0 +1,22 @@
+﻿<Page x:Class="ZST.WPF.WpfClient.ClickerView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZST.WPF.WpfClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClickerView">
+
+    <StackPanel Margin="50">
+
+        <TextBlock FontSize="20">Clicker</TextBlock>
+
+        <TextBlock>Current count: </TextBlock>
+        <TextBlock>10</TextBlock>
+
+        <Button Width="150" Height="70">Click me</Button>
+
+       
+    </StackPanel>
+</Page>
