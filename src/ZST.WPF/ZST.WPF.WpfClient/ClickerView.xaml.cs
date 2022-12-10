@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZST.WPF.WpfClient.ViewModels;
 
 namespace ZST.WPF.WpfClient
 {
@@ -20,9 +21,20 @@ namespace ZST.WPF.WpfClient
     /// </summary>
     public partial class ClickerView : Page
     {
+        private ClickerViewModel viewModel;
+
         public ClickerView()
         {
             InitializeComponent();
+
+            viewModel = new ClickerViewModel();
+
+            this.DataContext = viewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.ChangeCount();
         }
     }
 }

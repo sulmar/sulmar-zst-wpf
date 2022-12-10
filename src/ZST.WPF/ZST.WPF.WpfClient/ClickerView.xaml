@@ -11,12 +11,15 @@
     <StackPanel Margin="50">
 
         <TextBlock FontSize="20">Clicker</TextBlock>
+        <TextBlock FontSize="20">Current count: </TextBlock>
+        <TextBlock Name="Count" FontSize="20" Text="{Binding Path=Count}"></TextBlock>
 
-        <TextBlock>Current count: </TextBlock>
-        <TextBlock>10</TextBlock>
+        <Button Width="150" Height="70" Click="Button_Click" Content="Click me"></Button>
 
-        <Button Width="150" Height="70">Click me</Button>
+        <CheckBox IsThreeState="False" Name="Reverse" 
+                  IsChecked="{Binding Path=Reverse}">Reverse</CheckBox>
 
+            
        
     </StackPanel>
 </Page>
