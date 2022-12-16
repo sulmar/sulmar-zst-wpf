@@ -9,6 +9,7 @@ namespace ZST.WPF.WpfClient.ViewModels
 
     public class ClickerViewModel :  BaseViewModel
     {
+
         // Właściwość (Property)
 
         // public int Count { get; set; }
@@ -47,10 +48,48 @@ namespace ZST.WPF.WpfClient.ViewModels
             }
         }
 
+        private bool isPlaying;
+        public bool IsPlaying
+        {
+            get
+            {
+                return isPlaying;
+            }
+            set
+            {
+                isPlaying = value;
+                OnPropertyChanged(nameof(IsPlaying));
+            }
+        }
+
+        public TimeSpan PlayingTime {  get; set; }
+
         // ctor + 2 Tab
         public ClickerViewModel()
         {
+            IsPlaying = false;
+
             Count = 20;
+
+            PlayingTime = TimeSpan.FromSeconds(5);            
+        }
+
+       
+
+        public void StartPlaying()
+        {
+            Count = 0;
+            IsPlaying = true;
+        }
+
+        public void StopPlaying()
+        {
+            IsPlaying = false;
+        }
+
+        public bool CanChangeCount()
+        {
+            return IsPlaying;
         }
 
         public void ChangeCount()

@@ -14,7 +14,11 @@
         <TextBlock FontSize="20">Current count: </TextBlock>
         <TextBlock Name="Count" FontSize="20" Text="{Binding Path=Count}"></TextBlock>
 
-        <Button Width="150" Height="70" Click="Button_Click" Content="Click me"></Button>
+        <Button Width="150" Height="70" Click="StartPlaying_Click" >Start playing</Button>
+        <Button Width="150" Height="70" Click="ChangeCount_Click"
+                IsEnabled="{Binding Path=IsPlaying}"
+                
+                Content="Click me"></Button>
 
         <CheckBox IsThreeState="False" Name="Reverse" 
                   IsChecked="{Binding Path=Reverse}">Reverse</CheckBox>

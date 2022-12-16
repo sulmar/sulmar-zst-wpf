@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ZST.WPF.WpfClient.ViewModels;
 
 namespace ZST.WPF.WpfClient
@@ -23,18 +24,39 @@ namespace ZST.WPF.WpfClient
     {
         private ClickerViewModel viewModel;
 
+        private DispatcherTimer timer;
+
         public ClickerView()
         {
             InitializeComponent();
 
             viewModel = new ClickerViewModel();
 
+            timer = new DispatcherTimer();
+            timer.Interval = viewModel.PlayingTime;
+            timer.Tick += Timer_Tick;
+
             this.DataContext = viewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Timer_Tick(object? sender, EventArgs e)
         {
-            viewModel.ChangeCount();
+            timer.Stop();
+            viewModel.StopPlaying();
+        }
+
+        private void ChangeCount_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewModel.CanChangeCount())
+            {
+                viewModel.ChangeCount();
+            }
+        }
+
+        private void StartPlaying_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+            viewModel.StartPlaying();
         }
     }
 }
