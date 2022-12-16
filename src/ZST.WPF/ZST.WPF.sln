@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZST.WPF.WpfClient", "ZST.WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZST.WPF.WPFClient2", "ZST.WPF.WPFClient2\ZST.WPF.WPFClient2.csproj", "{8D810422-8B54-41D0-A267-28C8CAC774F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZST.WPF.Bookshelf", "ZST.WPF.Bookshelf\ZST.WPF.Bookshelf.csproj", "{7F498DA9-F1B9-40BE-8A7A-3F31C5B592B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8D810422-8B54-41D0-A267-28C8CAC774F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D810422-8B54-41D0-A267-28C8CAC774F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D810422-8B54-41D0-A267-28C8CAC774F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F498DA9-F1B9-40BE-8A7A-3F31C5B592B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F498DA9-F1B9-40BE-8A7A-3F31C5B592B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F498DA9-F1B9-40BE-8A7A-3F31C5B592B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F498DA9-F1B9-40BE-8A7A-3F31C5B592B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
