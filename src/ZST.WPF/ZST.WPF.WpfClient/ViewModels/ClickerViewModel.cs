@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +7,8 @@ using System.Threading.Tasks;
 namespace ZST.WPF.WpfClient.ViewModels
 {
 
-    public class ClickerViewModel : INotifyPropertyChanged
+    public class ClickerViewModel :  BaseViewModel
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
         // Właściwość (Property)
 
         // public int Count { get; set; }
@@ -28,13 +25,9 @@ namespace ZST.WPF.WpfClient.ViewModels
 
             set
             {
-                this.count = value;
-                // TODO: wyslij powiadomienie
-
-                if (PropertyChanged != null)
-                    PropertyChanged.Invoke(this, new                PropertyChangedEventArgs("Count"));
-
-                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Count"));
+                this.count = value;                
+              
+                OnPropertyChanged(nameof(Count));               
             }
         }
 
@@ -50,8 +43,7 @@ namespace ZST.WPF.WpfClient.ViewModels
             {
                 reverse = value;
 
-                if (PropertyChanged != null)
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Reverse"));
+                OnPropertyChanged(nameof(Reverse));
             }
         }
 
