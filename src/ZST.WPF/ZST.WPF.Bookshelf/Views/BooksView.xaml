@@ -15,7 +15,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Title, StringFormat={}{0}}" />
+                        <TextBlock Text="{Binding Title, StringFormat='{}&quot;{0}&quot;'}" />
                         <TextBlock Text="{Binding Author}" />
                         <TextBlock Text="{Binding Description}" />
                         <TextBlock Text="{Binding Price, StringFormat={}{0} PLN}"  />
