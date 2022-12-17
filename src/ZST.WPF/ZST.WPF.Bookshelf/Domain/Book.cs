@@ -47,13 +47,14 @@ namespace ZST.WPF.Bookshelf.Domain
             return FullName;
         }
 
-
-        public Book()
+        public Book(int id)
+            :base(id)
         {
 
         }
 
-        public Book(string title, Person author, string description, int publishedYear, decimal price, string iSBN)
+        public Book(int id, string title, Person author, string description, int publishedYear, decimal price, string iSBN)
+            : base(id)
         {
             Title = title;
             Author = author;

@@ -13,6 +13,15 @@
             }
         }
 
+        public Person(int id, string firstName, string lastName)
+            : base(id)
+        {            
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+
+
         //public override string ToString()
         //{
         //    return FullName;
