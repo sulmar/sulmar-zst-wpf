@@ -24,7 +24,6 @@
                     <StackPanel>
                         <TextBlock Text="{Binding Title, StringFormat='{}&quot;{0}&quot;'}" />
                         <TextBlock Text="{Binding Author}" />
-                        <TextBlock Visibility="Hidden" Text="Discount" />
                         <TextBlock Text="{Binding Description}" />
                         <TextBlock Text="{Binding Price, StringFormat={}{0} PLN}"  />
 
@@ -44,6 +43,10 @@
             <Label>Author</Label>
             <TextBox Text="{Binding SelectedBook.Author}" />
 
+            <Label>Discount</Label>
+            <TextBox Visibility="Visible" />
+
+            
             <Label>Description</Label>
             <TextBox Text="{Binding SelectedBook.Description}" />
             

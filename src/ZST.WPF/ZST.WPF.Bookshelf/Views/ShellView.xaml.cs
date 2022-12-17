@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Input; 
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -22,6 +22,18 @@ namespace ZST.WPF.Bookshelf.Views
         public ShellView()
         {
             InitializeComponent();
+        }
+
+        private void Books_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new BooksView());
+        }
+
+        private void Authors_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new AuthorsView());
+
+            // ContentFrame.Navigate(new Uri("Views/AuthorsView.xaml", UriKind.Relative));
         }
     }
 }
