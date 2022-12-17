@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +8,6 @@ using ZST.WPF.Bookshelf.Domain;
 
 namespace ZST.WPF.Bookshelf.ViewModels
 {
-    public abstract class BaseViewModel : INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged!=null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
 
     public class BooksViewModel : BaseViewModel
     {
@@ -38,15 +27,24 @@ namespace ZST.WPF.Bookshelf.ViewModels
             }
         }
 
+        public ObservableCollection<Person> Authors {  get; set; }
+
         public BooksViewModel() 
         {
             Books = new ObservableCollection<Book>();
+            Authors = new ObservableCollection<Person>();
 
-            Books.Add(new Book("WPF dla Opornych", "Marcin", "Lorem ipsum...", 2022, 99, "ABC123"));
+            Person author1 = new Person { FirstName = "Marcin", LastName = "Smith" };
+            Person author2 = new Person { FirstName = "Marek", LastName = "Smith" };
 
-            Books.Add(new Book("SQL dla Opornych", "Marek", "Lorem ipsum...", 2020, 199, "XYZ123"));
+            Authors.Add(author1);
+            Authors.Add(author2);
 
-            Books.Add(new Book("C dla Opornych", "Edyta", "Lorem ipsum...", 2022, 299, "AAA123"));
+            Books.Add(new Book("WPF dla Opornych", author1, "Lorem ipsum...", 2022, 99, "ABC123"));
+
+            Books.Add(new Book("SQL dla Opornych", author2, "Lorem ipsum...", 2020, 199, "XYZ123"));
+
+            Books.Add(new Book("C dla Opornych", author1, "Lorem ipsum...", 2022, 299, "AAA123"));
 
         }
 
@@ -62,3 +60,4 @@ namespace ZST.WPF.Bookshelf.ViewModels
 
     }
 }
+

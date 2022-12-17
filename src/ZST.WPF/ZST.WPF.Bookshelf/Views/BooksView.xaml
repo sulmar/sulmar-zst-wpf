@@ -45,7 +45,9 @@
             <TextBox Text="{Binding SelectedBook.Title, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label>Author</Label>
-            <TextBox Text="{Binding SelectedBook.Author}" />
+            <!--<TextBox Text="{Binding SelectedBook.Author.FullName, Mode=OneWay}" IsReadOnly="True"  />-->
+            <ComboBox ItemsSource="{Binding Authors}" 
+                      SelectedItem="{Binding SelectedBook.Author}" />
 
             <Label>Discount</Label>
             <TextBox Visibility="Visible" />
