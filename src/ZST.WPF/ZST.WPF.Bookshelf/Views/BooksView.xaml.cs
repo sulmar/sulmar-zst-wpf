@@ -34,7 +34,7 @@ namespace ZST.WPF.Bookshelf.Views
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-
+            viewModel.AddBook();
         }
     }
 }

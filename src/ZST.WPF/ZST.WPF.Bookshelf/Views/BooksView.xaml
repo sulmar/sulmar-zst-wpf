@@ -17,7 +17,7 @@
         <!-- Book List -->
 
         <DockPanel>
-            <Button Name="AddBook" DockPanel.Dock="Bottom">Add Book</Button>
+            <Button Name="AddBook" Click="AddBook_Click" DockPanel.Dock="Bottom">Add Book</Button>
             <ListBox ItemsSource="{Binding Books}"
                  SelectedItem="{Binding SelectedBook}"
                  >
