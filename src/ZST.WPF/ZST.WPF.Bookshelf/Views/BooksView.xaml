@@ -15,24 +15,28 @@
         </Grid.ColumnDefinitions>
 
         <!-- Book List -->
-        <ListBox ItemsSource="{Binding Books}"
+
+        <DockPanel>
+            <Button Name="AddBook" DockPanel.Dock="Bottom">Add Book</Button>
+            <ListBox ItemsSource="{Binding Books}"
                  SelectedItem="{Binding SelectedBook}"
                  >
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Title, StringFormat='{}&quot;{0}&quot;'}" />
-                        <TextBlock Text="{Binding Author}" />
-                        <TextBlock Text="{Binding Description}" />
-                        <TextBlock Text="{Binding Price, StringFormat={}{0} PLN}"  />
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title, StringFormat='{}&quot;{0}&quot;'}" />
+                            <TextBlock Text="{Binding Author}" />
+                            <TextBlock Text="{Binding Description}" />
+                            <TextBlock Text="{Binding Price, StringFormat={}{0} PLN}"  />
 
-                        
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-            
-        </ListBox>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+        </DockPanel>
         
         <!-- Selected Book -->
         <StackPanel Grid.Column="1">

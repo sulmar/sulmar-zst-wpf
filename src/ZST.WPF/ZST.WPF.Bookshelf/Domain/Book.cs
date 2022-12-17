@@ -36,6 +36,12 @@ namespace ZST.WPF.Bookshelf.Domain
             return FullName;
         }
 
+
+        public Book()
+        {
+
+        }
+
         public Book(string title, string author, string description, int publishedYear, decimal price, string iSBN)
         {
             Title = title;

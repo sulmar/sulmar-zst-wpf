@@ -31,5 +31,10 @@ namespace ZST.WPF.Bookshelf.Views
 
             this.DataContext = viewModel;
         }
+
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
