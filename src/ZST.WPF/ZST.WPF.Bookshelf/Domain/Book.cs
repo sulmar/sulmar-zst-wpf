@@ -1,37 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 
 namespace ZST.WPF.Bookshelf.Domain
 {
-    public abstract class Base 
-    {
-        public int Id { get; set; }
-        public DateTime CreatedOn { get; set; }
-
-        
-    }
-
-    public class Person : Base
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-        public string FullName
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
-        }
-
-        public override string ToString()
-        {
-            return FullName;
-        }
-    }
 
     public class Book : Base
     {
@@ -42,6 +16,23 @@ namespace ZST.WPF.Bookshelf.Domain
         public int PublishedYear { get; set; }
         public decimal Price { get; set; }
         public string ISBN { get; set; }
+
+        public string[] Fields {
+            get
+            {
+                return new string[]
+                {
+                    Title,
+                    Author.FirstName,
+                    Author.LastName,
+                    Description,
+                    PublishedYear.ToString(),
+                    Price.ToString(),
+                    ISBN
+                };
+            }
+        }
+
 
         public string FullName
         {

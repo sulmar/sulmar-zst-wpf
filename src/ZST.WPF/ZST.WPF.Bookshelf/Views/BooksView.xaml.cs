@@ -39,7 +39,12 @@ namespace ZST.WPF.Bookshelf.Views
 
         private void RemoveBook_Click(object sender, RoutedEventArgs e)
         {
+            viewModel.RemoveBook();
+        }
 
+        private void SaveBooks_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.SaveBooks();
         }
     }
 }

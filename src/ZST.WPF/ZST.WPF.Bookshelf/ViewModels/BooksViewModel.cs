@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,14 @@ namespace ZST.WPF.Bookshelf.ViewModels
             {
                 selectedBook = value;
                 OnPropertyChanged(nameof(SelectedBook));
+            }
+        }
+
+        public bool IsSelectedBook
+        {
+            get
+            {
+                return selectedBook != null;
             }
         }
 
@@ -60,6 +69,23 @@ namespace ZST.WPF.Bookshelf.ViewModels
         public void RemoveBook()
         {
             Books.Remove(SelectedBook);
+        }
+
+        public void SaveBooks()
+        {
+            string filename = "books.csv";
+
+            StreamWriter streamWriter = new StreamWriter(filename);
+            
+            foreach (Book book in Books)
+            {
+                string line = $"{book.Title};{book.Author.FirstName};{book.Author.LastName};{book.Description};{book.Price};{book.ISBN}";
+
+                streamWriter.WriteLine(line);
+            }
+
+            streamWriter.Close();
+            streamWriter.Dispose();
         }
 
 
