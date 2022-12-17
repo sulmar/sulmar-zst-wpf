@@ -17,7 +17,15 @@
         <!-- Book List -->
 
         <DockPanel>
-            <Button Name="AddBook" Click="AddBook_Click" DockPanel.Dock="Bottom">Add Book</Button>
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="AddBook" Click="AddBook_Click" >Add Book</Button>
+                <Button Grid.Column="1" Name="RemoveBook" Click="RemoveBook_Click" >Remove Book</Button>
+            </Grid>
+            
             <ListBox ItemsSource="{Binding Books}"
                  SelectedItem="{Binding SelectedBook}"
                  >
@@ -55,8 +63,11 @@
             
             <Label>Description</Label>
             <TextBox Text="{Binding SelectedBook.Description}" />
-            
-            
+
+            <Label>Price</Label>
+            <TextBox Text="{Binding SelectedBook.Price}" />
+
+
         </StackPanel>
         
     </Grid>

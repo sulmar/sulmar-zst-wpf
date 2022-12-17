@@ -57,6 +57,11 @@ namespace ZST.WPF.Bookshelf.ViewModels
             SelectedBook = book;
         }
 
+        public void RemoveBook()
+        {
+            Books.Remove(SelectedBook);
+        }
+
 
     }
 }
