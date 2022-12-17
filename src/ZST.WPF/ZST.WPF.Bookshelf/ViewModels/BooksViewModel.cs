@@ -12,7 +12,9 @@ namespace ZST.WPF.Bookshelf.ViewModels
     {
         public ObservableCollection<Book> Books { get; set; }
 
-        public BooksViewModel()
+        public Book SelectedBook { get; set; }
+
+        public BooksViewModel() 
         {
             Books = new ObservableCollection<Book>();
 
@@ -21,7 +23,6 @@ namespace ZST.WPF.Bookshelf.ViewModels
             Books.Add(new Book("SQL dla Opornych", "Marek", "Lorem ipsum...", 2020, 199, "XYZ123"));
 
             Books.Add(new Book("C dla Opornych", "Edyta", "Lorem ipsum...", 2022, 299, "AAA123"));
-
 
         }
 

@@ -8,7 +8,29 @@
         Title="ShellView" Height="450" Width="800">
     <Grid>
 
-        <Frame Source="BooksView.xaml" />
+        <DockPanel>
+
+            <!-- Header -->
+            <StackPanel DockPanel.Dock="Top"
+                        Orientation="Horizontal"
+                        Background="Green"
+                        >
+                <Button>Books</Button>
+                <Button>Authors</Button>
+            </StackPanel>
+
+            <!-- Footer -->
+            <StackPanel DockPanel.Dock="Bottom">
+                <TextBlock>version 1.0</TextBlock>
+            </StackPanel>
+
+            <!-- Content -->
+            <Frame Source="BooksView.xaml" />
+
+
+
+
+        </DockPanel>
 
     </Grid>
 </Window>

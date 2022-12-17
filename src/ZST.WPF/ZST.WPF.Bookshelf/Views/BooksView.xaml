@@ -9,21 +9,46 @@
       Title="BooksView">
 
     <Grid>
+        <Grid.ColumnDefinitions> 
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
 
-        <ListBox ItemsSource="{Binding Books}">
+        <!-- Book List -->
+        <ListBox ItemsSource="{Binding Books}"
+                 SelectedItem="{Binding SelectedBook}"
+                 >
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding Title, StringFormat='{}&quot;{0}&quot;'}" />
                         <TextBlock Text="{Binding Author}" />
+                        <TextBlock Visibility="Hidden" Text="Discount" />
                         <TextBlock Text="{Binding Description}" />
                         <TextBlock Text="{Binding Price, StringFormat={}{0} PLN}"  />
+
+                        
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             
         </ListBox>
+        
+        <!-- Selected Book -->
+        <StackPanel Grid.Column="1">
+            
+            <Label>Title</Label>
+            <TextBox Text="{Binding SelectedBook.Title, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label>Author</Label>
+            <TextBox Text="{Binding SelectedBook.Author}" />
+
+            <Label>Description</Label>
+            <TextBox Text="{Binding SelectedBook.Description}" />
+            
+            
+        </StackPanel>
         
     </Grid>
 </Page>
